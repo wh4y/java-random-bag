@@ -11,7 +11,7 @@ public class App {
 
         final RandomBag<Integer> bag = new RandomBagImpl<>();
 
-        System.out.printf("Is empty: %b!\n", bag.isEmpty());
+        System.out.printf("Is empty: %b!%n", bag.isEmpty());
 
         bag.add(1);
         bag.add(2);
@@ -20,8 +20,8 @@ public class App {
         bag.add(5);
 
         System.out.println("Items added!");
-        System.out.printf("Is empty: %b!\n", bag.isEmpty());
-        System.out.printf("Size: %d!\n", bag.size());
+        System.out.printf("Is empty: %b!%n", bag.isEmpty());
+        System.out.printf("Size: %d!%n", bag.size());
 
         final Iterator<Integer> iterator = bag.iterator();
 
