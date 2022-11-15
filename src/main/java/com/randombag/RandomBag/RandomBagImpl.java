@@ -88,9 +88,10 @@ public class RandomBagImpl<Item> implements RandomBag<Item> {
         private void removeItemFromCollection(int index) {
             Item[] newCollection = (Item[]) new Object[count - 1];
 
-            for (int i = 0, j = 0; i < this.count; i++, j++) {
+            for (int i = 0, j = 0; i < this.count; i++) {
                 if (i == index) continue;
                 newCollection[j] = this.itemCollection[i];
+                j++;
             }
 
             this.itemCollection = newCollection;
