@@ -1,6 +1,7 @@
 package com.randombag.RandomBag;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class RandomBagImpl<Item> implements RandomBag<Item> {
@@ -72,7 +73,9 @@ public class RandomBagImpl<Item> implements RandomBag<Item> {
         }
 
         @Override
-        public Item next() {
+        public Item next() throws NoSuchElementException {
+            if (!this.hasNext()) throw new NoSuchElementException();
+
             final int currentItemIndex = ThreadLocalRandom.current().nextInt(0, count);
             final Item currentItem = this.itemCollection[currentItemIndex];
 
